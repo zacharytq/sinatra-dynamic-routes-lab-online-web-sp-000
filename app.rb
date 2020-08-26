@@ -17,4 +17,9 @@ class App < Sinatra::Base
     "#{@string_to_say}"
   end
 
+  get "/say/:word1/:word2/:word3/:word4/:word5" do
+    @string_to_say = params[word1] + params[word2] + params[word3] + params[word4] +params[word5]
+    "#{@string_to_say}"
+  end
+
 end
