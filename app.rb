@@ -22,4 +22,14 @@ class App < Sinatra::Base
     "#{@string_to_say}"
   end
 
+  get "/:operation/:number1/:number2" do
+    case params[:operation]
+    when "add"
+      @add_result = params[:number1].to_i + params[:number2].to_i
+      "#{@add_result}"
+    when "subtract"
+      @subtract_result = params[:number1].to_i - params[:number2].to_i
+      "#{@subtract_result}"
+  end
+
 end
